@@ -1,0 +1,76 @@
+[
+  {
+    "name": "date_diff",
+    "description": "Compute the difference between two dates/times (UTC). Returns the signed difference in ms, seconds, minutes, hours, days and weeks, plus a human-readable summary. Accepts ISO-8601 (e.g. \"2026-01-01\" or \"2026-01-01T12:00:00Z\").",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "string",
+          "description": "Start date/time (ISO-8601)."
+        },
+        "to": {
+          "type": "string",
+          "description": "End date/time (ISO-8601)."
+        }
+      },
+      "required": [
+        "from",
+        "to"
+      ]
+    }
+  },
+  {
+    "name": "add_duration",
+    "description": "Add (or subtract, with negatives) a duration to a date and return the new UTC date/time. Provide any of years/months/weeks/days/hours/minutes/seconds.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "description": "Base date/time (ISO-8601)."
+        },
+        "years": {
+          "type": "number"
+        },
+        "months": {
+          "type": "number"
+        },
+        "weeks": {
+          "type": "number"
+        },
+        "days": {
+          "type": "number"
+        },
+        "hours": {
+          "type": "number"
+        },
+        "minutes": {
+          "type": "number"
+        },
+        "seconds": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "date"
+      ]
+    }
+  },
+  {
+    "name": "date_info",
+    "description": "Calendar facts about a date (UTC): weekday, day-of-year, ISO week number, quarter, whether the year is a leap year, and days in that month.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "description": "A date (ISO-8601)."
+        }
+      },
+      "required": [
+        "date"
+      ]
+    }
+  }
+]
